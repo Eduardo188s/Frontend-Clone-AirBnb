@@ -8,7 +8,7 @@ import MenuLink from "./navbar/MenuLink";
 import React from "react";
 
 const LogoutButton: React.FC = () => {
-    const router = useRouter;
+    const router = useRouter();
 
     const submitLogout = async () => {
         resetAuthCookies();
@@ -23,4 +23,4 @@ const LogoutButton: React.FC = () => {
     )
 }
 
-export default LogoutButton
+export default LogoutButton;

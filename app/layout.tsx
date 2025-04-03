@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Content, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import LoginModal from "./components/modals/LoginModal";
+import SearchModal from "./components/modals/SearchModal";
 import SignupModal from "./components/modals/SignupModal";
 import AddPropertyModal from "./components/modals/AddPropertyModal";
 
-const inter = Inter({subsets: ["latin"]})
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DjangoBnb",
@@ -18,24 +19,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const content = (
-      <p>Yo yo</p>
-    )
-  
+    <p>Yo yo</p>
+  )
 
   return (
     <html lang="en">
-      <body
-        className={inter.className}> 
-          <Navbar/>
+      <body className={inter.className}>
+        <Navbar />
+        
+        <div className="pt-32">
+          {children}
+        </div>
 
-          <div className="pt-24">
-            {children}
-          </div>
-          <LoginModal/>
-          <SignupModal/>
-          <AddPropertyModal/>
+        <LoginModal />
+        <SearchModal />
+        <SignupModal />
+        <AddPropertyModal />
       </body>
     </html>
   );
